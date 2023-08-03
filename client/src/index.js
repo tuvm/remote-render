@@ -26,6 +26,7 @@ smartConnect.onConnectionReady((connection) => {
     'ViewPortImageDelivery',
     'VtkImageDelivery',
   ]);
+  pvwClient.VtkImageDelivery.setMaxFrameRate(10);
   const renderer = new RemoteRenderer(pvwClient);
   renderer.setContainer(divRenderer);
   renderer.onImageReady(() => {

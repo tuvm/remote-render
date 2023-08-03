@@ -134,7 +134,7 @@ class _WebCone(vtk_wslink.ServerProtocol):
         self.registerVtkWebProtocol(protocols.vtkWebMouseHandler())
         self.registerVtkWebProtocol(protocols.vtkWebViewPort())
         self.registerVtkWebProtocol(protocols.vtkWebViewPortImageDelivery())
-        self.registerVtkWebProtocol(protocols.vtkWebViewPortGeometryDelivery())
+        # self.registerVtkWebProtocol(protocols.vtkWebViewPortGeometryDelivery())
 
         # Update authentication key to use
         self.updateSecret(_WebCone.authKey)
@@ -282,7 +282,7 @@ class _WebCone(vtk_wslink.ServerProtocol):
             interactor = vtkRenderWindowInteractor()
             interactor.SetRenderWindow(renderer_window)
             interactor.GetInteractorStyle().SetCurrentStyleToTrackballCamera()
-            # interactor.EnableRenderOff()
+            interactor.EnableRenderOff()
             # interactor.Initialize()
             # interactor.Start()
 
