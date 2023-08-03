@@ -17,13 +17,14 @@ divRenderer.style.width = '100vw';
 divRenderer.style.height = '100vh';
 divRenderer.style.overflow = 'hidden';
 
-const config = { sessionURL: 'ws://localhost:1234/ws' };
+const config = { sessionURL: 'ws://10.124.68.185:1234/ws' };
 const smartConnect = SmartConnect.newInstance({ config });
 smartConnect.onConnectionReady((connection) => {
   const pvwClient = ParaViewWebClient.createClient(connection, [
     'MouseHandler',
     'ViewPort',
     'ViewPortImageDelivery',
+    'VtkImageDelivery',
   ]);
   const renderer = new RemoteRenderer(pvwClient);
   renderer.setContainer(divRenderer);
